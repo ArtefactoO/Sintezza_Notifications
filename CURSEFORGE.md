@@ -22,7 +22,7 @@ See quest progress and rewards, new areas, and combat signals where you want the
 
 ### Quest progress and rewards
 
-<!-- Media: 01-quest-progress.png -->
+![Quest settings with a progress notification preview and position controls](https://raw.githubusercontent.com/ArtefactoO/Sintezza_Notifications/main/Docs/CurseForge/01-quest-progress.png)
 
 See the objective count and its progress bar as you play. The fill shifts from amber to gold and reaches your chosen accent at completion. Turn-in notifications can show the XP and money the game reports. You can hide Blizzard's yellow quest progress text while these alerts are active.
 
@@ -32,7 +32,11 @@ Show zone changes and new area discoveries in their own position on screen. When
 
 ### Combat and player signals
 
+![Combat signal settings with the animation style menu open and the entry signal in preview](https://raw.githubusercontent.com/ArtefactoO/Sintezza_Notifications/main/Docs/CurseForge/02-combat-alert.png)
+
 Use separate signals for combat, stealth, low health, low mana, and aggro. Set your own health and mana thresholds, and limit those signals to dungeons and raids if you prefer. With a compatible [Sintezza UI](https://www.curseforge.com/wow/addons/sintezza-ui) loaded, Notifications takes over its shared signals.
+
+![Mana signal settings with trigger and recovery thresholds and a low mana preview](https://raw.githubusercontent.com/ArtefactoO/Sintezza_Notifications/main/Docs/CurseForge/03-mana-alert.png)
 
 ### Appearance and setup
 

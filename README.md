@@ -4,7 +4,7 @@
 
 Animated notifications and combat signals for WoW Forever 1.60.1 (interface 16001). Quest notifications show acceptance, objective progress, and turn-in for ordinary quests and world quests. Other notifications cover zones and subzones, achievements, boss emotes, rare deaths and scenarios. Scenario objective progress and level-ups are off by default.
 
-![A quest notification with an objective counter and progress bar](Docs/CurseForge/01-quest-progress.png)
+![Quest settings with a progress notification preview and position controls](Docs/CurseForge/01-quest-progress.png)
 
 Quest progress shows the objective count and fill at a glance.
 
@@ -50,3 +50,13 @@ Disable **Presence** in Horizon Suite and accept its reload prompt to switch the
 The implementation uses the Forever 1.60.1.70938 API declarations at source pin `bebcb6bf309cf41b41bd74f8ca651e6a105b2676`. Quest objective snapshots and typed client progress messages are reconciled before display. Rare alerts require a dead rare unit or a rare vignette that changes to dead.
 
 Spectral and Fira Sans are distributed under their accompanying SIL Open Font Licenses in `Media/`. This addon's implementation and animation artwork use no Horizon Suite assets.
+
+## Gallery
+
+![Combat signal settings with the animation style menu open and the entry signal in preview](Docs/CurseForge/02-combat-alert.png)
+
+Choose a combat signal style and preview the entry or exit effect.
+
+![Mana signal settings with trigger and recovery thresholds and a low mana preview](Docs/CurseForge/03-mana-alert.png)
+
+Set the mana level that triggers the alert and the recovery level that rearms it.
