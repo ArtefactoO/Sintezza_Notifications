@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sintezza Notifications · CurseForge</title>
+<style>
+:root { color-scheme: light dark; }
+body { font: 1rem/1.5 system-ui, sans-serif; margin: 0 auto; padding: 1.5rem; max-width: 54rem; }
+h1, h2 { line-height: 1.2; }
+section { margin-top: 1.75rem; }
+table { border-collapse: collapse; }
+th, td { text-align: left; vertical-align: top; padding: .35rem .6rem; border-bottom: 1px solid GrayText; }
+button { font: inherit; padding: .35rem .7rem; }
+textarea { display: block; font: .95rem/1.5 monospace; width: 100%; box-sizing: border-box; resize: vertical; margin: .7rem 0; padding: .6rem; }
+[role="status"] { margin-left: .6rem; }
+#changelog { border-top: 1px solid GrayText; padding-top: .5rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Sintezza Notifications</h1>
+<table aria-label="Поля CurseForge">
+<tbody>
+<tr><th scope="row">Game</th><td>World of Warcraft</td></tr>
+<tr><th scope="row">Class</th><td>Addons</td></tr>
+<tr><th scope="row">Flavor and version</th><td>Forever 1.60.1</td></tr>
+<tr><th scope="row">Main category</th><td>HUDs</td></tr>
+<tr><th scope="row">Additional categories</th><td>Quests &amp; Leveling, Combat</td></tr>
+<tr><th scope="row">CurseForge relations</th><td>Sintezza Theme, Sintezza UI, Shortest Path Forever (Optional Dependencies)</td></tr>
+<tr><th scope="row">Project license</th><td>MIT License</td></tr>
+<tr><th scope="row">Release type</th><td>Release</td></tr>
+<tr><th scope="row">Display name</th><td>Sintezza Notifications 0.1.0 (Forever)</td></tr>
+</tbody>
+</table>
+<section aria-labelledby="summary-title">
+<h2 id="summary-title">Summary</h2>
+<textarea id="summary" aria-labelledby="summary-title" lang="en" rows="2" readonly>Movable quest progress, zone discovery, transport and combat alerts for WoW Forever.</textarea>
+<button type="button" data-copy="summary">Копировать Summary</button><span role="status"></span>
+</section>
+<section aria-labelledby="description-title">
+<h2 id="description-title">Description</h2>
+<p>Вставь в поле Description в режиме Markdown.</p>
+<textarea id="description" aria-labelledby="description-title" lang="en" rows="15" readonly>See quest progress and rewards, new areas, and combat signals where you want them in WoW Forever. Set the position, fonts, colors, and animation for each group of notifications in `/snotify`.
+
+### Quest progress and rewards
+
+
+See the objective count and its progress bar as you play. The fill shifts from amber to gold and reaches your chosen accent at completion. Turn-in notifications can show the XP and money the game reports. You can hide Blizzard&#x27;s yellow quest progress text while these alerts are active.
+
+### Zones and transport
+
+Show zone changes and new area discoveries in their own position on screen. When [Shortest Path Forever](https://www.curseforge.com/wow/addons/shortest-path-forever) sends an onboard arrival warning, Sintezza can display it as a movable countdown.
+
+### Combat and player signals
+
+Use separate signals for combat, stealth, low health, low mana, and aggro. Set your own health and mana thresholds, and limit those signals to dungeons and raids if you prefer. With a compatible [Sintezza UI](https://www.curseforge.com/wow/addons/sintezza-ui) loaded, Notifications takes over its shared signals.
+
+### Appearance and setup
+
+[Sintezza Theme](https://www.curseforge.com/wow/addons/sintezza-theme) unlocks the settings window. Open `/snotify` to preview alerts and drag them into place, and `/stheme` to choose the shared palette and fonts. Notifications run with bundled fonts when Theme is absent. Addon text defaults to Russian on Russian clients and English on all other locales. Quest and zone names come from the game.
+
+For WoW Forever 1.60.1, install through the CurseForge app or extract the `Sintezza_Notifications` folder into `Interface/AddOns`. If Horizon Suite&#x27;s Presence is enabled, turn it off to let Sintezza show world notifications.</textarea>
+<button type="button" data-copy="description">Копировать Description</button><span role="status"></span>
+</section>
+<section id="changelog" aria-labelledby="changelog-title">
+<h2 id="changelog-title">Changelog</h2>
+<p>Вставь в отдельное поле Changelog файла выпуска.</p>
+<textarea id="release-notes" aria-labelledby="changelog-title" lang="en" rows="6" readonly>### Changelog
+
+[View the release history on GitHub](https://github.com/ArtefactoO/Sintezza_Notifications/blob/main/CHANGELOG.md).
+
+Source, installation details, and credits are available on [GitHub](https://github.com/ArtefactoO/Sintezza_Notifications).</textarea>
+<button type="button" data-copy="release-notes">Копировать Changelog</button><span role="status"></span>
+</section>
+</main>
+<script>
+for (const button of document.querySelectorAll("[data-copy]")) {
+  button.addEventListener("click", async () => {
+    const field = document.getElementById(button.dataset.copy);
+    const status = button.nextElementSibling;
+    try {
+      await navigator.clipboard.writeText(field.value);
+      status.textContent = "Скопировано.";
+    } catch {
+      field.focus();
+      field.select();
+      status.textContent = "Текст выделен. Нажми Ctrl+C.";
+    }
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+## Interface: 16001
+## Title: Sintezza Notifications
+## Author: Sintezza
+## X-License: MIT
+## Notes: Animated zone, quest and event notifications
+## Notes-ruRU: Анимированные уведомления о зонах, заданиях и событиях
+## Version: 0.1.0
+## SavedVariables: Sintezza_NotificationsDB
+## LoadSavedVariablesFirst: 1
+## OptionalDeps: Sintezza_Theme, Sintezza_UI
+## IconTexture: Interface\AddOns\Sintezza_Notifications\Media\Icon
+
+Locale.lua
+Core.lua
+Alerts\Defaults.lua
+Alerts\Host.lua
+Alerts\CombatAlert.lua
+Alerts\Variants.lua
+Alerts\EventSignalDisplay.lua
+Alerts\EventAlerts.lua
+Display.lua
+Quests.lua
+Events.lua
+SettingsBuilder.lua
+Alerts\Options.lua
+Settings.lua

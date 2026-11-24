@@ -1,0 +1,11 @@
+package-as: Sintezza_Notifications
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+optional-dependencies:
+  - 1810657-sintezza-theme
+  - 1813153-sintezza-ui
+  - 1708599-shortest-path-forever
+ignore:
+  - Docs/CurseForge
+  - Tests
