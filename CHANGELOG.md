@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Use the shared solid preview background and thin border for all notification and signal samples.
+
 ## 0.1.0
 
 First public release for WoW Forever 1.60.1.

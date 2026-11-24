@@ -182,7 +182,8 @@ function B:AddPreview(page, createSample, play, selection, defaultKind)
         pane.nextY = pane.nextY - 7
     end
 
-    local stage = W:Surface(pane)
+    local stage = CreateFrame("Frame", nil, pane, "BackdropTemplate")
+    T:Backdrop(stage, T.input, T.lineSoft)
     stage:SetHeight(132)
     stage:SetClipsChildren(true)
     B:AddRow(page, pane, stage)
