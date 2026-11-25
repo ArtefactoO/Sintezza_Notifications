@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.1.1
 
+- Hide the duplicate Blizzard achievement toast while Sintezza achievement notifications are active.
 - Use the shared solid preview background and thin border for all notification and signal samples.
 
 ## 0.1.0

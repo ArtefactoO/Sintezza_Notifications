@@ -4,7 +4,7 @@
 ## X-License: MIT
 ## Notes: Animated zone, quest and event notifications
 ## Notes-ruRU: Анимированные уведомления о зонах, заданиях и событиях
-## Version: 0.1.0
+## Version: 0.1.1
 ## SavedVariables: Sintezza_NotificationsDB
 ## LoadSavedVariablesFirst: 1
 ## OptionalDeps: Sintezza_Theme, Sintezza_UI

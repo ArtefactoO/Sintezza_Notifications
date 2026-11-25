@@ -344,14 +344,14 @@ local function Play(frame, entry)
     frame:Show()
 end
 
-local function Allowed(entry)
-    local style = ns.WorldStyle(entry.group)
+function ns.AllowsNotification(group)
+    local style = ns.WorldStyle(group)
     if style.opacity <= 0 then return false end
-    if entry.group == "transport" then
+    if group == "transport" then
         return style.enabled
     end
     if style == ns.db and not ns.db.otherEventsEnabled then return false end
-    return ns.db[entry.group] and not ns.HorizonActive()
+    return ns.db[group] and not ns.HorizonActive()
 end
 
 local function CanPlay(frame)
@@ -367,7 +367,7 @@ function ns.PlayNext()
     while index <= #queue do
         local entry = queue[index]
         local frame = live[entry.group] or live.world
-        if not Allowed(entry) then
+        if not ns.AllowsNotification(entry.group) then
             table.remove(queue, index)
         elseif CanPlay(frame) then
             table.remove(queue, index)
@@ -385,7 +385,7 @@ function ns.Notify(group, kind, title, detail, options)
         key = options.key, questID = options.questID, final = options.final, long = options.long,
         progress = options.progress, priority = options.priority, completion = options.completion,
     }
-    if entry.title == "" or not Allowed(entry) then return end
+    if entry.title == "" or not ns.AllowsNotification(group) then return end
     local frame = live[group] or live.world
     if entry.final and entry.questID then
         for index = #queue, 1, -1 do
@@ -428,7 +428,7 @@ function ns.ShowTransportArrival(destination, duration)
     local entry = { group = "transport", label = L.arrival, title = ns.Text(destination),
         detail = Countdown(duration), countdown = duration }
     local frame = live.transport
-    if not frame or entry.title == "" or not Allowed(entry) then return false end
+    if not frame or entry.title == "" or not ns.AllowsNotification(entry.group) then return false end
     if preview.entry and SamePosition(frame.layout, anchor) then return false end
     if not frame.entry and not CanPlay(frame) then return false end
     Play(frame, entry)
@@ -462,7 +462,7 @@ function ns.RefreshDisplay()
     ns.ApplyPosition()
     for _, frame in pairs(live) do
         if frame.entry then
-            if Allowed(frame.entry) then Fill(frame, frame.entry) else Stop(frame) end
+            if ns.AllowsNotification(frame.entry.group) then Fill(frame, frame.entry) else Stop(frame) end
         end
     end
     if preview.entry then Fill(preview, preview.entry) end

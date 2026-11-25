@@ -3,6 +3,7 @@ local L = ns.L
 local lastZone, lastSubzone, zoneTimer, enteringZone
 local lastDiscovery, discoveryTime, discoveryDetail
 local nativeZoneFrame
+local nativeAchievementSystem
 local scenario, completedScenario, scenarioTimer
 local seenVignettes, rareDeaths = {}, {}
 local worldReady
@@ -167,6 +168,18 @@ local function HookNativeZoneText()
     if ok then nativeZoneFrame = frame end
 end
 
+local function FilterNativeAchievementAlerts()
+    local system = AchievementAlertSystem
+    if not system or system == nativeAchievementSystem
+        or type(system.SetShouldIgnoreAlertsFunction) ~= "function" then return end
+    local previousFilter = system.shouldIgnoreAlertsFunc
+    system:SetShouldIgnoreAlertsFunction(function()
+        return (worldReady and GetAchievementInfo and ns.AllowsNotification("achievements"))
+            or (previousFilter and previousFilter())
+    end)
+    nativeAchievementSystem = system
+end
+
 local function GetScenario()
     local info = C_ScenarioInfo and C_ScenarioInfo.GetScenarioInfo and C_ScenarioInfo.GetScenarioInfo()
     if not ns.IsPublic(info, "table") then return end
@@ -281,6 +294,7 @@ function ns.StartEvents()
             ns.SyncNativeQuestProgress()
             ns.SyncNativeZoneDiscovery()
             HookNativeZoneText()
+            FilterNativeAchievementAlerts()
             HookTransportArrival()
             if not worldReady or initial or reload then
                 lastZone, lastSubzone = ns.ZoneNames()
